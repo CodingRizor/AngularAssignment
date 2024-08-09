@@ -1,0 +1,21 @@
+<div class="outer-box">
+  <div class="image-container"></div>
+  <div class="inner-box">
+    <h2 *ngIf="!loginSuccess">Login to Your Account</h2>
+    <form *ngIf="!loginSuccess" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div>
+        <label>Email or Phone</label>
+        <input formControlName="emailOrPhone" />
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+      </div>
+      <button type="submit">Login</button>
+      <div *ngIf="loginFailed" style="color:red;">Invalid credentials</div>
+    </form>
+    <div *ngIf="loginSuccess" style="color:green;">
+      Login Successful
+    </div>
+  </div>
+</div>

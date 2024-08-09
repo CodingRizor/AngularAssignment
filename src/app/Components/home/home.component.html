@@ -1,0 +1,8 @@
+<div class="home-container">
+  <form [formGroup]="emailOrPhoneForm" (ngSubmit)="onSubmit()">
+    <label for="emailOrPhone">Enter your Email or Phone Number:</label>
+    <input id="emailOrPhone" formControlName="emailOrPhone" type="text" />
+    <button type="submit">Continue</button>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
+</div>

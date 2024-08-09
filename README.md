@@ -1,5 +1,32 @@
-# AngularAssignment
-This assignment covers the login and signup functionality created in Angular.
+# AuthPage
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
 This project is a multi-step Angular application that allows users to either log in or sign up based on their email or phone number. Below is a brief overview of the functionalities from the home page to the second step of the signup process.
 
 Home Page
@@ -35,8 +62,7 @@ Users provide additional information, including organization details, designatio
 The form validates this input, including checks for valid organization names, city names, and pincode formats.
 Upon successful validation, the combined user data from both signup steps is saved to local storage.
 The user is then redirected to the login page, with a success message indicating that the registration was successful.
-All the data is stored in the local storage(cache) so user can verify or check its email address and password from the cache.
-Also all the user data is available in the console.
+
 Technologies Used
 Angular: Framework for building the application.
 NgRx: State management for handling data across the application.

@@ -1,0 +1,30 @@
+<div class="outer-box">
+  <div class="image-container"></div>
+  <div class="inner-box">
+    <h2>Sign Up for a New Account</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onContinue()">
+      <div>
+        <label>Name</label>
+        <input formControlName="name" />
+        <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" style="color: red;">
+          Name must contain only alphabets.
+        </div>
+      </div>
+      <div>
+        <label>Email or Phone</label>
+        <input formControlName="emailOrPhone" />
+        <div *ngIf="signupForm.get('emailOrPhone')?.invalid && signupForm.get('emailOrPhone')?.touched" style="color: red;">
+          Must be a valid email or a 10-digit phone number.
+        </div>
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" style="color: red;">
+          Password must be at least 8 characters long.
+        </div>
+      </div>
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+</div>

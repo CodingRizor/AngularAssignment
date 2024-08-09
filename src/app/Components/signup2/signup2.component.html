@@ -1,0 +1,44 @@
+<div class="outer-box">
+  <div class="image-container"></div>
+  <div class="inner-box">
+    <h2 *ngIf="!registrationSuccessful">Complete Your Registration</h2>
+
+    <!-- Display form only if registration is not successful -->
+    <form *ngIf="!registrationSuccessful" [formGroup]="step2Form" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="organization">Organization</label>
+        <input id="organization" formControlName="organization" />
+      </div>
+      <div *ngIf="organizationError" style="color:red;">Unknown Organization - Its Solve8</div>
+      <div>
+        <label for="designation">Designation</label>
+        <select id="designation" formControlName="designation">
+          <option value="Manager">Manager</option>
+          <option value="Engineer">Engineer</option>
+          <option value="Intern">Intern</option>
+        </select>
+      </div>
+      <div>
+        <label for="birthDate">Birth Date</label>
+        <input type="date" id="birthDate" formControlName="birthDate" />
+      </div>
+      <div>
+        <label for="city">City</label>
+        <input id="city" formControlName="city" />
+        <div *ngIf="cityError" style="color: red;">City must be in text format.</div>
+      </div>
+      <div>
+        <label for="pincode">Pincode</label>
+        <input id="pincode" formControlName="pincode" />
+        <div *ngIf="pincodeError" style="color: red;">Pincode must be exactly 6 digits.</div>
+      </div>
+      <button type="button" (click)="onBack()">Back</button>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display success message if registration is successful -->
+    <div *ngIf="registrationSuccessful" class="success-message">
+      <h2>Welcome to the platform, {{ userName }}!</h2>
+    </div>
+  </div>
+</div>
